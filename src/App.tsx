@@ -215,11 +215,11 @@ export default function App() {
         if (cols.length < 2) return null;
         return {
           contractno: cols[0] || '',
-          stylename: cols[1] || '',
-          color: cols[2] || '',
-          pono: cols[3] || '',
-          item: cols[4] || '',
-          buyer: cols[5] || buyers[0] || '',
+          pono: cols[1] || '',
+          item: cols[2] || '',
+          buyer: cols[3] || buyers[0] || '',
+          stylename: cols[4] || '',
+          color: cols[5] || '',
           season: cols[6] || '',
           orderqty: parseInt(cols[7]?.replace(/,/g, '')) || 0,
           washpricepcs: parseFloat(cols[8]?.replace('$', '')) || 0,
@@ -1185,11 +1185,11 @@ export default function App() {
                 <thead>
                   <tr>
                     <th className="data-table-header">Contract No</th>
-                    <th className="data-table-header">Style Name</th>
-                    <th className="data-table-header">Color</th>
                     <th className="data-table-header">PO No</th>
                     <th className="data-table-header">Item</th>
                     <th className="data-table-header">Buyer</th>
+                    <th className="data-table-header">Style Name</th>
+                    <th className="data-table-header">Color</th>
                     <th className="data-table-header">Season</th>
                     <th className="data-table-header">Order Qty</th>
                     <th className="data-table-header">Price pcs</th>
@@ -1223,11 +1223,11 @@ export default function App() {
                         className={index % 2 === 0 ? 'data-table-row-even' : 'data-table-row-odd'}
                       >
                         <td className="data-table-cell font-mono">{order.contractNo}</td>
-                        <td className="data-table-cell text-left px-2">{order.styleName}</td>
-                        <td className="data-table-cell">{order.color}</td>
                         <td className="data-table-cell">{order.poNo}</td>
                         <td className="data-table-cell text-left px-2">{order.item}</td>
                         <td className="data-table-cell">{order.buyer}</td>
+                        <td className="data-table-cell text-left px-2">{order.styleName}</td>
+                        <td className="data-table-cell">{order.color}</td>
                         <td className="data-table-cell">{order.season}</td>
                         <td className="data-table-cell font-bold">{order.orderQty.toLocaleString()}</td>
                         <td className="data-table-cell">
@@ -1712,7 +1712,7 @@ export default function App() {
                   Copy rows from Excel and paste them below. Ensure the columns match the table structure:
                   <br />
                   <span className="text-[10px] font-mono bg-gray-100 p-1 block mt-2">
-                    Contract No | Style | Color | PO No | Item | Buyer | Season | Qty | Price Pcs | Price Doz | Date
+                    Contract No | PO No | Item | Buyer | Style | Color | Season | Qty | Price Pcs | Price Doz | Date
                   </span>
                 </p>
                 <textarea
